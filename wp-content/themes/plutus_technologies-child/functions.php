@@ -249,6 +249,7 @@ add_action("admin_init", "display_theme_panel_fields");
 
 
 //Classic Widgets
+//Remove block editor
 add_filter('use_widgets_block_editor', '__return_false');
 
 function information_widgets_init()
@@ -299,3 +300,22 @@ function information_widgets_init()
     );
 }
 add_action('widgets_init', 'information_widgets_init');
+
+
+//Remove admin menu
+/**function wpdocs_remove_menus(){
+  
+    remove_menu_page( 'index.php' );                  //Dashboard
+    remove_menu_page( 'jetpack' );                    //Jetpack* 
+    remove_menu_page( 'edit.php' );                   //Posts
+    remove_menu_page( 'upload.php' );                 //Media
+    remove_menu_page( 'edit.php?post_type=page' );    //Pages
+    remove_menu_page( 'edit-comments.php' );          //Comments
+    remove_menu_page( 'themes.php' );                 //Appearance
+    remove_menu_page( 'plugins.php' );                //Plugins
+    remove_menu_page( 'users.php' );                  //Users
+    remove_menu_page( 'tools.php' );                  //Tools
+    remove_menu_page( 'options-general.php' );        //Settings
+    
+  }
+  add_action( 'admin_menu', 'wpdocs_remove_menus' );**/
